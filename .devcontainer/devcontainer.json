@@ -1,57 +1,48 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet-mssql
 {
-	"name": ".NET (C#), Node.js (TypeScript) & MS SQL",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Configure tool-specific properties.
-	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {
-			// Set *default* container specific settings.json values on container create.
-			"settings": {
-				"mssql.connections": [
-					{
-						"server": "localhost,1433",
-						"database": "",
-						"authenticationType": "SqlLogin",
-						"user": "sa",
-						"password": "P@ssw0rd",
-						"emptyPasswordInput": false,
-						"savePassword": false,
-						"profileName": "mssql-container"
-					}
-				]
-			},
-
-			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": [
-				"ms-dotnettools.csharp",
-				"ms-mssql.mssql"
-			]
-		}
-	},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [5000, 5001],
-	// "portsAttributes": {
-	//		"5001": {
-	//			"protocol": "https"
-	//		}
-	// }
-
-	// postCreateCommand.sh parameters: $1=SA password, $2=dacpac path, $3=sql script(s) path
-	"postCreateCommand": "bash .devcontainer/mssql/postCreateCommand.sh 'P@ssw0rd' './bin/Debug/' './.devcontainer/mssql/'",
-	"features": {
-		"ghcr.io/devcontainers-contrib/features/markdownlint-cli:1": {},
-		"ghcr.io/stateful/devcontainer-features/runme:0": {}
-	}
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "name": "universal",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "ms-vscode-remote.remote-wsl",
+        "ms-toolsai.vscode-jupyter-slideshow",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        "ms-toolsai.jupyter-renderers",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "quantum.qsharp-lang-vscode",
+        "ms-toolsai.jupyter",
+        "eamodio.gitlens",
+        "juanblanco.solidity",
+        "ms-vscode-remote.remote-containers",
+        "ms-dotnettools.dotnet-interactive-vscode",
+        "visualstudioexptteam.vscodeintellicode",
+        "ms-dotnettools.csharp",
+        "esbenp.prettier-vscode",
+        "davidanson.vscode-markdownlint",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.vscodeintellicode-csharp",
+        "editorconfig.editorconfig",
+        "ms-edgedevtools.vscode-edge-devtools",
+        "christian-kohler.npm-intellisense",
+        "ms-azuretools.vscode-docker",
+        "wholroyd.jinja",
+        "kevinrose.vsc-python-indent",
+        "batisteo.vscode-django",
+        "njpwerner.autodocstring",
+        "donjayamanne.python-extension-pack",
+        "donjayamanne.python-environment-manager",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "github.copilot-chat",
+        "github.copilot",
+        "shd101wyy.markdown-preview-enhanced",
+        "docsmsft.docs-markdown",
+        "github.codespaces"
+      ]
+    }
+  }
 }
